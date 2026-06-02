@@ -75,8 +75,8 @@ $body = "
     .value{color:#1e293b;font-size:1rem;word-break:break-word;line-height:1.5}
     .footer{background:#f1f5f9;padding:20px;text-align:center;color:#64748b;font-size:0.8rem}
 .navbar-brand img {
-            width: 120px;
-        }
+    width: 60px;
+}
         
         .footer-brand img {
             width: 200px;
