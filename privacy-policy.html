@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Stratrix Technologies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #050508;
+            --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            --text-primary: #fff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(99, 102, 241, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1)
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        /* LENIS */
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden
+        }
+
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)
+        }
+
+        .navbar {
+            background: rgba(5, 5, 8, 0.85);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: all 0.4s
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary) !important;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .navbar-brand .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+            transition: transform 0.4s
+        }
+
+        .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 16px !important;
+            transition: all 0.3s
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-primary) !important;
+            transform: translateY(-2px)
+        }
+
+        .btn-consultation {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.4s;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+            cursor: pointer
+        }
+
+        .btn-consultation:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(99, 102, 241, 0.6);
+            color: white
+        }
+
+        .breadcrumb-section {
+            padding: 25px 0;
+            margin-top: 70px
+        }
+
+        .breadcrumb-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem
+        }
+
+        .breadcrumb-item.active {
+            color: var(--text-secondary);
+            font-size: 0.85rem
+        }
+
+        .terms-hero {
+            padding: 30px 0 40px;
+            text-align: center
+        }
+
+        .terms-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #c7d2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .terms-hero p {
+            color: var(--text-secondary);
+            font-size: 0.95rem
+        }
+
+        .terms-section {
+            padding-bottom: 60px
+        }
+
+        .terms-layout {
+            display: flex;
+            gap: 30px
+        }
+
+        .terms-sidebar {
+            width: 280px;
+            min-width: 280px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            position: sticky;
+            top: 100px;
+            height: fit-content
+        }
+
+        .terms-sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-bottom: 4px
+        }
+
+        .terms-sidebar-item:hover,
+        .terms-sidebar-item.active {
+            background: rgba(99, 102, 241, 0.12);
+            color: var(--text-primary);
+            transform: translateX(5px)
+        }
+
+        .terms-sidebar-item.active {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.25)
+        }
+
+        .terms-sidebar-item .number {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: rgba(99, 102, 241, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            min-width: 28px;
+            transition: all 0.3s
+        }
+
+        .terms-sidebar-item.active .number {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4)
+        }
+
+        .terms-content {
+            flex: 1;
+            min-width: 0
+        }
+
+        .terms-content-block {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            transition: all 0.4s
+        }
+
+        .terms-content-block:hover {
+            border-color: rgba(99, 102, 241, 0.25);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.08);
+            transform: translateY(-3px)
+        }
+
+        .terms-content-block h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .terms-content-block h3 .section-num {
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            background: rgba(99, 102, 241, 0.12);
+            padding: 6px 14px;
+            border-radius: 8px
+        }
+
+        .terms-content-block p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.9;
+            margin-bottom: 12px
+        }
+
+        .questions-section {
+            padding: 60px 0
+        }
+
+        .questions-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            backdrop-filter: blur(25px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3)
+        }
+
+        .questions-box h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px
+        }
+
+        .questions-box p {
+            color: var(--text-secondary);
+            margin: 0
+        }
+
+        .btn-contact {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s;
+            box-shadow: 0 10px 35px rgba(99, 102, 241, 0.5);
+            text-decoration: none
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(99, 102, 241, 0.6);
+            color: white
+        }
+
+        .footer {
+            background: rgba(10, 10, 18, 0.7);
+            border-top: 1px solid var(--border-color);
+            padding: 80px 0 30px;
+            backdrop-filter: blur(20px)
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px
+        }
+
+        .footer-brand .brand-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4)
+        }
+
+        .footer-desc {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.8;
+            max-width: 300px
+        }
+
+        .footer h6 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 25px
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0
+        }
+
+        .footer-links li {
+            margin-bottom: 12px
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: all 0.3s;
+            display: inline-block
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+            transform: translateX(5px)
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            align-items: center
+        }
+
+        .footer-contact-item i {
+            color: var(--accent-blue);
+            min-width: 20px
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px
+        }
+
+        .social-link {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            transition: all 0.4s;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.08)
+        }
+
+        .social-link:hover {
+            background: var(--accent-gradient);
+            color: white;
+            transform: translateY(-6px) rotate(360deg);
+            border-color: transparent
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin: 0
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-left: 25px;
+            transition: color 0.3s
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s;
+            animation: pulseWA 2s infinite
+        }
+
+        @keyframes pulseWA {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6)
+            }
+
+            50% {
+                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0)
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px)
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            padding: 20px
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-box {
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+            padding: 45px;
+            width: 100%;
+            max-width: 520px;
+            position: relative;
+            transform: scale(0.9) translateY(30px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            max-height: 90vh;
+            overflow-y: auto
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1) translateY(0)
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            transform: rotate(90deg)
+        }
+
+        .modal-box h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff, #c7d2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .modal-box .modal-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 30px
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 18px
+        }
+
+        .modal-form label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-secondary)
+        }
+
+        .modal-form input,
+        .modal-form select,
+        .modal-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            outline: none
+        }
+
+        .modal-form input::placeholder,
+        .modal-form textarea::placeholder {
+            color: var(--text-muted)
+        }
+
+        .modal-form input:focus,
+        .modal-form select:focus,
+        .modal-form textarea:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            background: rgba(255, 255, 255, 0.06)
+        }
+
+        .modal-form select {
+            appearance: none;
+            cursor: pointer
+        }
+
+        .modal-form select option {
+            background: #0f0f1a;
+            color: white
+        }
+
+        .modal-form textarea {
+            resize: vertical;
+            min-height: 100px
+        }
+
+        .modal-form .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s;
+            box-shadow: 0 10px 35px rgba(99, 102, 241, 0.4);
+            font-family: 'Poppins', sans-serif;
+            margin-top: 10px
+        }
+
+        .modal-form .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(99, 102, 241, 0.5)
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px
+        }
+
+        .form-row .form-group {
+            flex: 1
+        }
+
+        @media(max-width:576px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0
+            }
+
+            .modal-box {
+                padding: 30px 25px
+            }
+        }
+
+        @media(max-width:768px) {
+            .terms-layout {
+                flex-direction: column
+            }
+
+            .terms-sidebar {
+                width: 100%;
+                min-width: auto;
+                position: static
+            }
+
+            .terms-hero h1 {
+                font-size: 1.8rem
+            }
+
+            .questions-box {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="starfield"></canvas>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><span class="brand-icon"><i class="fas fa-bolt"></i></span>
+                Stratrix Technologies</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"><i class="fas fa-bars text-white"></i></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                            data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu dropdown-menu-dark"
+                            style="background:rgba(15,15,26,0.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;margin-top:10px;">
+                            <li><a class="dropdown-item" href="pos-systems"
+                                    style="color:#94a3b8;padding:10px 20px;"><i class="fas fa-cash-register me-2"
+                                        style="color:#6366f1;"></i>POS Systems</a></li>
+                            <li><a class="dropdown-item" href="cms-solutions"
+                                    style="color:#94a3b8;padding:10px 20px;"><i class="fas fa-globe me-2"
+                                        style="color:#8b5cf6;"></i>CMS Solutions</a></li>
+                            <li><a class="dropdown-item" href="ai-automation"
+                                    style="color:#94a3b8;padding:10px 20px;"><i class="fas fa-robot me-2"
+                                        style="color:#06b6d4;"></i>AI Automation</a></li>
+                            <li><a class="dropdown-item" href="crm-erp" style="color:#94a3b8;padding:10px 20px;"><i
+                                        class="fas fa-project-diagram me-2" style="color:#f97316;"></i>CRM & ERP</a>
+                            </li>
+                            <li><a class="dropdown-item" href="branding-marketing"
+                                    style="color:#94a3b8;padding:10px 20px;"><i class="fas fa-chart-line me-2"
+                                        style="color:#ec4899;"></i>Branding & Marketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+                </ul>
+                <button class="btn-consultation open-modal" data-type="consultation">Get Free Consultation</button>
+            </div>
+        </div>
+    </nav>
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">Privacy Policy</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="terms-hero">
+        <div class="container">
+            <h1 class="reveal">Privacy Policy</h1>
+            <p class="reveal">Your privacy is important to us. Please read this policy carefully.</p>
+        </div>
+    </section>
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-layout">
+                <div class="terms-sidebar">
+                    <a href="#info" class="terms-sidebar-item active"><span class="number">01</span> Information We
+                        Collect</a>
+                    <a href="#use" class="terms-sidebar-item"><span class="number">02</span> How We Use Information</a>
+                    <a href="#sharing" class="terms-sidebar-item"><span class="number">03</span> Information Sharing</a>
+                    <a href="#security" class="terms-sidebar-item"><span class="number">04</span> Data Security</a>
+                    <a href="#cookies" class="terms-sidebar-item"><span class="number">05</span> Cookies</a>
+                    <a href="#rights" class="terms-sidebar-item"><span class="number">06</span> Your Rights</a>
+                    <a href="#children" class="terms-sidebar-item"><span class="number">07</span> Children's Privacy</a>
+                    <a href="#changes" class="terms-sidebar-item"><span class="number">08</span> Policy Changes</a>
+                    <a href="#contact" class="terms-sidebar-item"><span class="number">09</span> Contact Us</a>
+                </div>
+                <div class="terms-content">
+                    <div class="terms-content-block reveal" id="info">
+                        <h3><span class="section-num">01.</span> Information We Collect</h3>
+                        <p>We collect personal information that you voluntarily provide to us when you register on our
+                            website, express interest in obtaining information about us or our products and services,
+                            participate in activities on our website, or contact us.</p>
+                        <p>This includes your name, email address, phone number, company name, and any other information
+                            you choose to provide through our contact forms or consultation requests.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="use">
+                        <h3><span class="section-num">02.</span> How We Use Information</h3>
+                        <p>We use the information we collect to provide, maintain, and improve our services, process
+                            your requests and transactions, send you technical notices and support messages, and
+                            communicate with you about products, services, and events.</p>
+                        <p>We may also use your information to personalize your experience, analyze usage patterns, and
+                            protect our services against fraudulent or unauthorized activity.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="sharing">
+                        <h3><span class="section-num">03.</span> Information Sharing</h3>
+                        <p>We do not sell, trade, or rent your personal information to third parties. We may share your
+                            information with trusted service providers who assist us in operating our website and
+                            conducting our business.</p>
+                        <p>We may also disclose your information when required by law, to enforce our policies, or to
+                            protect our rights, property, or safety.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="security">
+                        <h3><span class="section-num">04.</span> Data Security</h3>
+                        <p>We implement appropriate technical and organizational security measures to protect your
+                            personal information against unauthorized access, alteration, disclosure, or destruction.
+                        </p>
+                        <p>However, no method of transmission over the internet or electronic storage is 100% secure,
+                            and we cannot guarantee absolute security.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="cookies">
+                        <h3><span class="section-num">05.</span> Cookies</h3>
+                        <p>We use cookies and similar tracking technologies to track activity on our website and hold
+                            certain information. Cookies are files with a small amount of data that may include an
+                            anonymous unique identifier.</p>
+                        <p>You can instruct your browser to refuse all cookies or indicate when a cookie is being sent,
+                            but some parts of our service may not function properly without cookies.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="rights">
+                        <h3><span class="section-num">06.</span> Your Rights</h3>
+                        <p>You have the right to access, update, or delete your personal information at any time. You
+                            may also opt out of receiving promotional communications from us by following the
+                            unsubscribe instructions in our emails.</p>
+                        <p>If you wish to exercise any of these rights, please contact us using the information provided
+                            below.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="children">
+                        <h3><span class="section-num">07.</span> Children's Privacy</h3>
+                        <p>Our services are not directed to children under the age of 13. We do not knowingly collect
+                            personal information from children under 13. If we learn that we have collected personal
+                            information from a child under 13, we will take steps to delete such information.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="changes">
+                        <h3><span class="section-num">08.</span> Policy Changes</h3>
+                        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by
+                            posting the new Privacy Policy on this page and updating the "last updated" date.</p>
+                        <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this
+                            Privacy Policy are effective when they are posted on this page.</p>
+                    </div>
+                    <div class="terms-content-block reveal" id="contact">
+                        <h3><span class="section-num">09.</span> Contact Us</h3>
+                        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                        <p>Email: info@stratrixtechnology.com<br>Phone: +92 301 5317071<br>Address: Office #402 4th Floor, Indigo Business Center, Bahadurabad, Karachi, Pakistan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="questions-section">
+        <div class="container">
+            <div class="questions-box reveal">
+                <div>
+                    <h4>Still have questions?</h4>
+                    <p>We're here to help you.</p>
+                </div><button class="btn-contact open-modal" data-type="consultation">Contact Us <i
+                        class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand"><span class="brand-icon"><i class="fas fa-bolt"></i></span> Stratrix
+                        Technology</div>
+                    <p class="footer-desc">We help businesses transform with technology, automation and creative
+                        marketing solutions.</p>
+                    <div class="social-links mt-4"><a href="#" class="social-link"><i
+                                class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i
+                                class="fab fa-instagram"></i></a><a href="#" class="social-link"><i
+                                class="fab fa-linkedin-in"></i></a><a href="#" class="social-link"><i
+                                class="fab fa-twitter"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="about-us">About Us</a></li>
+                        <li><a href="portfolio">Portfolio</a></li>
+                        <li><a href="blog">Blog</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6>Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="pos-systems">POS Systems</a></li>
+                        <li><a href="cms-solutions">CMS Solutions</a></li>
+                        <li><a href="ai-automation.htm'l">AI Automation</a></li>
+                        <li><a href="crm-erp">CRM & ERP</a></li>
+                        <li><a href="branding-marketing">Branding & Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6>Contact</h6>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+92 301 5317071</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@stratrixtechnology.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Office #402 4th Floor, Indigo Business Center, Bahadurabad, Karachi, Pakistan</span>
+                    </div>
+                    <h6 class="mt-4">Follow Us</h6>
+                    <div class="social-links"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a
+                            href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#"
+                            class="social-link"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-link"><i
+                                class="fab fa-twitter"></i></a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Stratrix Technologies. All rights reserved.</p>
+                <div class="footer-bottom-links"><a href="privacy-policy">Privacy Policy</a><a
+                        href="terms">Terms & Conditions</a></div>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/+923015317071" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-close" id="modalClose"><i class="fas fa-times"></i></div>
+            <h3 id="modalTitle">Get Free Consultation</h3>
+            <p class="modal-subtitle" id="modalSubtitle">Fill in the details and we'll get back to you within 24 hours.</p>
+            
+            <!-- ✅ Added name attributes + unique form ID -->
+            <form class="modal-form" id="modalForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" name="phone" placeholder="+92 301 5317071" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Service</label>
+                    <select name="service">
+                        <option value="">Select a service</option>
+                        <option>POS Systems</option>
+                        <option>CMS Solutions</option>
+                        <option>AI Automation</option>
+                        <option>CRM & ERP</option>
+                        <option>Branding & Marketing</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" name="company" placeholder="Your company name">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Tell us about your project..."></textarea>
+                </div>
+                <!-- ✅ Unique button ID -->
+                <button type="submit" class="btn-submit" id="modalSubmitBtn">
+                    Submit Request <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="form.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        const lenis = new Lenis({
+            duration: 1.5,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true,
+            mouseMultiplier: 1,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                lenis.scrollTo(this.getAttribute("href"));
+            });
+        });
+        lenis.scrollTo("top");
+
+        // Stars
+        // ===== STARFIELD =====
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+        let width, height, stars = [];
+        const numStars = 180;
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        class Star {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 1.8 + 0.3;
+                this.speed = Math.random() * 0.3 + 0.05;
+                this.opacity = Math.random() * 0.8 + 0.2;
+                this.twinkleSpeed = Math.random() * 0.015 + 0.005;
+                this.twinkleOffset = Math.random() * Math.PI * 2;
+            }
+            update(t) {
+                this.y -= this.speed;
+                if (this.y < -5) {
+                    this.reset();
+                    this.y = height + 5;
+                }
+                this.currentOpacity = this.opacity * (0.5 + 0.5 * Math.sin(t * this.twinkleSpeed + this
+                    .twinkleOffset));
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255,255,255,${this.currentOpacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) stars.push(new Star());
+        }
+
+        function animateStars(time) {
+            ctx.clearRect(0, 0, width, height);
+            stars.forEach(s => {
+                s.update(time);
+                s.draw();
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        resize();
+        initStars();
+        animateStars(0);
+        window.addEventListener('resize', () => {
+            resize();
+            initStars();
+        });
+        gsap.utils.toArray('.reveal').forEach(el => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 88%'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.9,
+                ease: 'power3.out'
+            })
+        });
+        const sidebarItems = document.querySelectorAll('.terms-sidebar-item'),
+            contentBlocks = document.querySelectorAll('.terms-content-block');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            contentBlocks.forEach(block => {
+                if (window.scrollY >= block.offsetTop - 150) current = block.getAttribute('id')
+            });
+            sidebarItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) item.classList.add('active')
+            })
+        });
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) lenis.scrollTo(target, {
+                    offset: -100
+                })
+            })
+        });        
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.style.background = window.scrollY > 50 ? 'rgba(5,5,8,0.95)' : 'rgba(5,5,8,0.85)';
+            nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.5)' : 'none'
+        });
+    </script>
+</body>
+
+</html>
